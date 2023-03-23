@@ -10,4 +10,10 @@ describe("Calcular la suma de una cadena", () => {
   it("Calcular con una cadena de dos numeros separados por coma", () => {
     expect(calculadora("1,2")).toEqual(3);
   });
+  it("Calcular con una cadena de mas de dos numeros separados por coma", () => {
+    expect(calculadora("1,2,5")).toEqual(8);
+  });
+  it("Calcular la suma de dos numeros separados por guion", () => {
+    expect(calculadora("1-5")).toEqual(6);
+  });
 });

@@ -8,9 +8,13 @@ function calculadora(cadena) {
   else
   {
     let suma=0;
+    cadena = cadena.replace("-",",");
     let numeros = cadena.split(","); //divide en un array de aquellos separados por coma
-    suma = suma + parseInt(numeros[0]);
-    suma = suma + parseInt(numeros[1]);
+
+    for(let i=0;i<numeros.length;i++)
+    {
+      suma = suma + parseInt(numeros[i]);
+    }
     return suma;
   }
 }
