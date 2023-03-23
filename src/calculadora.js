@@ -8,7 +8,7 @@ function calculadora(cadena) {
   else
   {
     let suma=0;
-    cadena = cadena.replace("-",",");
+    cadena = cadena.replaceAll("-",",");
     let numeros = cadena.split(","); //divide en un array de aquellos separados por coma
 
     for(let i=0;i<numeros.length;i++)

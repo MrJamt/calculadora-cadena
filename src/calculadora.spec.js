@@ -16,4 +16,7 @@ describe("Calcular la suma de una cadena", () => {
   it("Calcular la suma de dos numeros separados por guion", () => {
     expect(calculadora("1-5")).toEqual(6);
   });
+  it("Calcular la suma de mas de dos numeros separados por guion", () => {
+    expect(calculadora("1-5-6")).toEqual(12);
+  });
 });
