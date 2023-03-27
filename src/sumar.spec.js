@@ -25,4 +25,7 @@ describe("Calcular la suma de una cadena", () => {
   it("Calcular la suma de dos numeros separados por un delimitador dado", () => {
     expect(sumar("//[;] 6;7;4")).toEqual(17);
   });
+  it("Calcular la suma de dos numeros separados por distintos delimitadores", () => {
+    expect(sumar("//[;] 6,3-2;1")).toEqual(12);
+  });
 });

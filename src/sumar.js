@@ -1,3 +1,5 @@
+import encontrarDelimitador from "./encontrarDelimitador";
+
 function sumar(cadenaNumeros) {
   if(cadenaNumeros=="")
     return 0;
@@ -8,15 +10,14 @@ function sumar(cadenaNumeros) {
   else
   {
     let suma=0;
-    if(cadenaNumeros[0]=="/")
+    let delimitador=encontrarDelimitador(cadenaNumeros);    
+    if(delimitador!="")
     {
-      cadenaNumeros = cadenaNumeros.slice(3);
-      let delimitador=";"
-      cadenaNumeros = cadenaNumeros.slice(2);
+      cadenaNumeros = cadenaNumeros.slice(4+delimitador.length);
       cadenaNumeros = cadenaNumeros.replaceAll(delimitador,",");
     }
     cadenaNumeros = cadenaNumeros.replaceAll("-",",");
-    let numeros = cadenaNumeros.split(","); //divide en un array de aquellos separados por coma
+    let numeros = cadenaNumeros.split(",");
 
     for(let i=0;i<numeros.length;i++)
     {
@@ -27,3 +28,4 @@ function sumar(cadenaNumeros) {
 }
 
 export default sumar;
+
