@@ -1,4 +1,5 @@
 import encontrarDelimitador from "./encontrarDelimitador";
+import reemplazarDelimitador from "./reemplazarDelimitador";
 
 function sumar(cadenaNumeros) {
   if(cadenaNumeros=="")
@@ -13,12 +14,7 @@ function sumar(cadenaNumeros) {
     let delimitadores = encontrarDelimitador(cadenaNumeros);   
     if(delimitadores.length>0)
     {
-      cadenaNumeros = cadenaNumeros.slice(2); //quitar los // iniciales
-      for(let i=0;i<delimitadores.length;i++)
-      {
-        cadenaNumeros = cadenaNumeros.slice(2+delimitadores[i].length); //2 ya que si o si debemos borrar []
-        cadenaNumeros = cadenaNumeros.replaceAll(delimitadores[i],",");
-      }
+      cadenaNumeros = reemplazarDelimitador(cadenaNumeros,delimitadores);
     }
     cadenaNumeros = cadenaNumeros.replaceAll("-",",");
     let numeros = cadenaNumeros.split(",");

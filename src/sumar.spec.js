@@ -37,4 +37,7 @@ describe("Calcular la suma de una cadena", () => {
   it("Calcular la suma de numeros separados por mas de un delimitador", () => {
     expect(sumar("//[*][%] 1*2%3,7-9")).toEqual(22);
   });
+  it("Calcular la suma de numeros separados por mas de un delimitador", () => {
+    expect(sumar("//[***][%%%] 1***2%%%3,7-9")).toEqual(22);
+  });
 });
