@@ -19,4 +19,7 @@ describe("Calcular la suma de una cadena", () => {
   it("Calcular la suma de mas de dos numeros separados por guion", () => {
     expect(calculadora("1-5-6")).toEqual(12);
   });
+  it("Calcular la suma de dos numeros separados por coma y guion", () => {
+    expect(calculadora("4,1-3")).toEqual(8);
+  });
 });

@@ -1,15 +1,15 @@
-function calculadora(cadena) {
-  if(cadena=="")
+function calculadora(cadenaNumeros) {
+  if(cadenaNumeros=="")
     return 0;
-  else if(cadena.length == 1)
+  else if(cadenaNumeros.length == 1)
   {
-    return parseInt(cadena);
+    return parseInt(cadenaNumeros);
   }
   else
   {
     let suma=0;
-    cadena = cadena.replaceAll("-",",");
-    let numeros = cadena.split(","); //divide en un array de aquellos separados por coma
+    cadenaNumeros = cadenaNumeros.replaceAll("-",",");
+    let numeros = cadenaNumeros.split(","); //divide en un array de aquellos separados por coma
 
     for(let i=0;i<numeros.length;i++)
     {
