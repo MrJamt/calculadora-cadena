@@ -21,7 +21,8 @@ function sumar(cadenaNumeros) {
 
     for(let i=0;i<numeros.length;i++)
     {
-      suma = suma + parseInt(numeros[i]);
+      if(numeros[i]<1000)
+        suma = suma + parseInt(numeros[i]);
     }
     return suma;
   }

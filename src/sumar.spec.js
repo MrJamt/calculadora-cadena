@@ -19,13 +19,16 @@ describe("Calcular la suma de una cadena", () => {
   it("Calcular la suma de mas de dos numeros separados por guion", () => {
     expect(sumar("1-5-6")).toEqual(12);
   });
-  it("Calcular la suma de dos numeros separados por coma y guion", () => {
+  it("Calcular la suma de mas de dos numeros separados por coma y guion", () => {
     expect(sumar("4,1-3")).toEqual(8);
   });
-  it("Calcular la suma de dos numeros separados por un delimitador dado", () => {
+  it("Calcular la suma de mas de dos numeros separados por un delimitador dado", () => {
     expect(sumar("//[;] 6;7;4")).toEqual(17);
   });
-  it("Calcular la suma de dos numeros separados por distintos delimitadores", () => {
+  it("Calcular la suma de mas de dos numeros separados por distintos delimitadores", () => {
     expect(sumar("//[;] 6,3-2;1")).toEqual(12);
+  });
+  it("Calcular la suma de numeros menores a 1000", () => {
+    expect(sumar("2,1000")).toEqual(2);
   });
 });
