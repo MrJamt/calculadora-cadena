@@ -10,11 +10,15 @@ function sumar(cadenaNumeros) {
   else
   {
     let suma=0;
-    let delimitador=encontrarDelimitador(cadenaNumeros);    
-    if(delimitador!="")
+    let delimitadores = encontrarDelimitador(cadenaNumeros);   
+    if(delimitadores.length>0)
     {
-      cadenaNumeros = cadenaNumeros.slice(4+delimitador.length); //4 ya que si o si debemos borrar //[ y ]
-      cadenaNumeros = cadenaNumeros.replaceAll(delimitador,",");
+      cadenaNumeros = cadenaNumeros.slice(2); //quitar los // iniciales
+      for(let i=0;i<delimitadores.length;i++)
+      {
+        cadenaNumeros = cadenaNumeros.slice(2+delimitadores[i].length); //2 ya que si o si debemos borrar []
+        cadenaNumeros = cadenaNumeros.replaceAll(delimitadores[i],",");
+      }
     }
     cadenaNumeros = cadenaNumeros.replaceAll("-",",");
     let numeros = cadenaNumeros.split(",");
