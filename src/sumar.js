@@ -13,7 +13,7 @@ function sumar(cadenaNumeros) {
     let delimitador=encontrarDelimitador(cadenaNumeros);    
     if(delimitador!="")
     {
-      cadenaNumeros = cadenaNumeros.slice(4+delimitador.length);
+      cadenaNumeros = cadenaNumeros.slice(4+delimitador.length); //4 ya que si o si debemos borrar //[ y ]
       cadenaNumeros = cadenaNumeros.replaceAll(delimitador,",");
     }
     cadenaNumeros = cadenaNumeros.replaceAll("-",",");

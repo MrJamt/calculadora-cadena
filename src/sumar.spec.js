@@ -31,4 +31,7 @@ describe("Calcular la suma de una cadena", () => {
   it("Calcular la suma de numeros menores a 1000", () => {
     expect(sumar("2,1000")).toEqual(2);
   });
+  it("Calcular la suma de numeros separados por delimitadores de mas de un caracter", () => {
+    expect(sumar("//[***] 1***2***3")).toEqual(6);
+  });
 });
