@@ -4,29 +4,27 @@ import reemplazarDelimitador from "./reemplazarDelimitador";
 function sumar(cadenaNumeros) {
   if(cadenaNumeros=="")
     return 0;
-  else if(cadenaNumeros.length == 1)
-  {
+  
+  if(cadenaNumeros.length == 1)
     return parseInt(cadenaNumeros);
-  }
-  else
-  {
-    let suma=0;
-    let delimitadores = encontrarDelimitador(cadenaNumeros);   
-    if(delimitadores.length>0)
-    {
-      cadenaNumeros = reemplazarDelimitador(cadenaNumeros,delimitadores);
-    }
-    cadenaNumeros = cadenaNumeros.replaceAll("-",",");
-    let numeros = cadenaNumeros.split(",");
 
-    for(let i=0;i<numeros.length;i++)
-    {
-      if(numeros[i]<1000)
-        suma = suma + parseInt(numeros[i]);
-    }
-    return suma;
+  let sumaTotal=0;
+  let delimitadores = encontrarDelimitador(cadenaNumeros);   
+  if(delimitadores.length>0)
+  {
+    cadenaNumeros = reemplazarDelimitador(cadenaNumeros,delimitadores);
   }
+  cadenaNumeros = cadenaNumeros.replaceAll("-",",");
+  let lista_numeros = cadenaNumeros.split(",");
+
+  for(let posicion=0;posicion<lista_numeros.length;posicion++)
+  {
+    if(lista_numeros[posicion]<1000)
+    sumaTotal += parseInt(lista_numeros[posicion]);
+  }
+  return sumaTotal;
 }
+
 
 export default sumar;
 

@@ -3,23 +3,21 @@ function encontrarDelimitador(cadenaNumeros) {
   let delimitador="";
   if(cadenaNumeros[0]==cadenaNumeros[1] && cadenaNumeros[0]=="/") //empieza el/los delimitador/es
   {
-        let i=3;
-        let bandera = true;
-        while(bandera)
+        let posicion_caracter=3;
+        let existeDelimitador = true;
+        while(existeDelimitador)
         {
-            delimitador+=cadenaNumeros[i];
-            i++;
-            if(cadenaNumeros[i]=="]")
+            delimitador+=cadenaNumeros[posicion_caracter];
+            posicion_caracter++;
+            if(cadenaNumeros[posicion_caracter]=="]")
             {
               delimitadores.push(delimitador);
               delimitador="";     
-              if(cadenaNumeros[i+1]=="[")
-              {
-               i=i+2; 
-              }
+              if(cadenaNumeros[posicion_caracter+1]=="[")
+                posicion_caracter+=2;
               else
-                bandera=false;
-          }
+                existeDelimitador=false;
+            }
         }
   }
   return delimitadores;

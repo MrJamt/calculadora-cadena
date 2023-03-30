@@ -1,12 +1,10 @@
-//import encontrarDelimitador from "./encontrarDelimitador";
-
 function reemplazarDelimitador(cadenaNumeros,delimitadores) {
     
-  cadenaNumeros = cadenaNumeros.slice(2); //quitar los // iniciales
-  for(let i=0;i<delimitadores.length;i++)
+  cadenaNumeros = cadenaNumeros.slice(2); //quita los // iniciales
+  for(let posicion_delimitador=0;posicion_delimitador<delimitadores.length;posicion_delimitador++)
   {
-    cadenaNumeros = cadenaNumeros.slice(2+delimitadores[i].length); //2 ya que si o si debemos borrar []
-    cadenaNumeros = cadenaNumeros.replaceAll(delimitadores[i],",");
+    cadenaNumeros = cadenaNumeros.slice(2+delimitadores[posicion_delimitador].length); //2 ya que si o si debemos borrar []
+    cadenaNumeros = cadenaNumeros.replaceAll(delimitadores[posicion_delimitador],",");
   }
   return cadenaNumeros;
 }
